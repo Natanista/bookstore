@@ -1,20 +1,34 @@
 package com.example.bookstore.domain;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Category {
+@Entity
+public class Category implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private Integer id;
     private String name;
     private String description;
+
+    @OneToMany(mappedBy = "category")
     private List<Book> books = new ArrayList<>();
 
     public Category(Integer id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
+    }
+
+    public Category(){
+
     }
 
     public Integer getId() {
