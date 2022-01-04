@@ -20,9 +20,9 @@ http://localhost:8080/bookstore
 | `/categories` | `DELETE` | add a category |
 
 
+## Tech Stack
 
+**Client:** Angular
 
-
-
-
+**Server:** Spring Boot, Heroku
 
