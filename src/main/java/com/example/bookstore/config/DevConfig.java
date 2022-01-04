@@ -18,8 +18,8 @@ public class DevConfig {
     private String strategy;
 
     @Bean
-    public boolean initializeDataBase(){
-        if(strategy.equals("create")){
+    public boolean initializeDataBase() {
+        if (strategy.equals("create")) {
             this.dbService.initializeDataBase();
         }
 

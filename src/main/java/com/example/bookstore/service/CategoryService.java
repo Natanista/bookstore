@@ -23,13 +23,13 @@ public class CategoryService {
         ));
     }
 
-    public List<Category> findAll(){
+    public List<Category> findAll() {
         return categoryRepository.findAll();
     }
 
-    public Category create(Category obj){
+    public Category create(Category obj) {
         obj.setId(null);
-        return  categoryRepository.save(obj);
+        return categoryRepository.save(obj);
     }
 
 
@@ -45,8 +45,8 @@ public class CategoryService {
         try {
             categoryRepository.deleteById(id);
 
-        }catch (DataIntegrityViolationException e){
-          throw new com.example.bookstore.exceptions.DataIntegrityViolationException("Category cannot be deleted as it has books assigned");
+        } catch (DataIntegrityViolationException e) {
+            throw new com.example.bookstore.exceptions.DataIntegrityViolationException("Category cannot be deleted as it has books assigned");
         }
     }
 }

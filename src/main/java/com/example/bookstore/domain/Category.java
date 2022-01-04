@@ -1,6 +1,9 @@
 package com.example.bookstore.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +18,13 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
     private Integer id;
+
+    @NotEmpty(message = "Name required.")
+    @Length(min = 2, max = 100, message = "Name must have 2 - 100 characters")
     private String name;
+
+    @NotEmpty(message = "Description required.")
+    @Length(min = 2, max = 100, message = "Description must have 2 - 100 characters")
     private String description;
 
     @OneToMany(mappedBy = "category")
@@ -27,7 +36,7 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public Category(){
+    public Category() {
 
     }
 

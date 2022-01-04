@@ -14,7 +14,7 @@ public class TestConfig {
     DBService dbService;
 
     @Bean
-    public void inicializeDataBase(){
+    public void inicializeDataBase() {
         this.dbService.initializeDataBase();
     }
 }

@@ -19,11 +19,11 @@ public class DBService {
     CategoryRepository categoryRepository;
 
 
-    public void initializeDataBase(){
+    public void initializeDataBase() {
         bookRepository.deleteAll();
         categoryRepository.deleteAll();
         Category category1 = new Category(null, "IT", "information technology books");
-;
+        ;
         Book book1 = new Book(null, "Clean Code", "Robert Martin", "Lorem", category1);
         Book book2 = new Book(null, "Clean Architecture", "Robert Martin", "Lorem", category1);
         Book book3 = new Book(null, "Pragmatic Programmer", "Uncle Bob", "Lorem", category1);
