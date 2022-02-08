@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/bookstore/categories")
+@CrossOrigin
 public class CategoryResource {
 
     @Autowired

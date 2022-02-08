@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/bookstore/books")
+@CrossOrigin
 public class BookResource {
 
     @Autowired
@@ -36,7 +37,6 @@ public class BookResource {
         List<Book> list = bookService.findAll(id_category);
         List<BookDTO> listDTO = list.stream().map(obj -> new BookDTO(obj)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDTO);
-
     }
 
     @PutMapping("/{id}")
