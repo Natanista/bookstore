@@ -1,11 +1,13 @@
 package com.example.bookstore.dtos;
 
 import com.example.bookstore.domain.Category;
+import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
+@Data
 public class CategoryDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -26,27 +28,6 @@ public class CategoryDTO implements Serializable {
         this.description = obj.getDescription();
     }
 
-    public Integer getId() {
-        return id;
-    }
+    public CategoryDTO(){}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
